@@ -1,1 +1,9 @@
 test
+{% if user.is_authenticated %}
+<li><a href="{% url 'accounts:logout' %}">ログアウト</a></li>
+{% else %}
+<li><a href="{% url 'accounts:signup' %}">サインアップ</a></li>
+<li><a href="{% url 'accounts:login' %}">ログイン</a></li>
+{% endif %}
+{% block contents %}
+{% endblock %}
